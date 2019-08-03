@@ -37,6 +37,7 @@ function newTodo() {
 
 
             trash.classList.add('fas', 'fa-trash-alt');
+            span.classList.add('td_entry')
             span.append(trash);
             li.innerText = todoInput.value;
             li.append(span);
@@ -55,13 +56,20 @@ newTodo();
 
 // delete todo items function
 function deleteTodo() {
-    let allSpans = document.querySelectorAll('span');
+    const todoList = document.getElementById('todo_list');
+    let allSpans = todoList.querySelectorAll('span');
 
     for(let span of allSpans) {
         span.addEventListener('click', function() {
             span.parentElement.remove(); event.stopPropagation();
         });
     }
+};
+
+// delete todo items function
+function deleteAll() {
+    const todoList = document.getElementById('todo_list');
+    todoList.innerHTML = '';
 };
 
 // settings button function

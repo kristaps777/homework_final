@@ -61,9 +61,9 @@
 
                     <ul id="todo_list"
                         class="todo_list">
-                        <li>#item1<span><i class="fas fa-trash-alt"></i></span></li>
-                        <li>#item2<span><i class="fas fa-trash-alt"></i></span></li>
-                        <li>#item3<span><i class="fas fa-trash-alt"></i></span></li>
+                        <li>#item1<span class="td_entry"><i class="fas fa-trash-alt"></i></span></li>
+                        <li>#item2<span class="td_entry"><i class="fas fa-trash-alt"></i></span></li>
+                        <li>#item3<span class="td_entry"><i class="fas fa-trash-alt"></i></span></li>
                     </ul>
 
                 </section>
@@ -79,6 +79,13 @@
                 </section>
 
                 <section id="settings_area" class="settings_inactive">
+
+                    <ul class="settings_items">
+                        <li onclick="deleteAll()"><span><i class="fas fa-ban fa-2x"></i></span>delete all</li>
+                        <li><span><i class="fas fa-backspace fa-2x"></i></span>delete completed</li>
+                        <li><span><i class="fas fa-eye fa-2x"></i></span>show completed</li>
+                        <li><span><i class="far fa-eye fa-2x"></i></span>show active</li>
+                    </ul>
 
                 </section>
 

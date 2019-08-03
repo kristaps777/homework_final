@@ -158,8 +158,7 @@ input::placeholder {
     color: white;
     display: flex;
     justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
+    align-items: flex-start;
     background-color: rgba(102, 117, 187, 0.7);
     position: absolute;
     right: 0;
@@ -167,6 +166,7 @@ input::placeholder {
     animation-name: settings;
     animation-duration: 1s;
     transition: ease-in-out;
+    transition: .5s;
 }
 
 @keyframes settings {
@@ -183,4 +183,29 @@ input::placeholder {
 
 .settings_inactive {
     display: none;
+}
+
+.settings_items {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.settings_items li {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.settings_items li:hover {
+    background-color: grey;
+    cursor: pointer;
+}
+
+.settings_items span {
+    margin-bottom: 5px;
 }

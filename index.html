@@ -42,7 +42,7 @@
                             <p>Take a minute and register!</p>
                             <button id="signin"
                                 type="button"
-                                onclick="moveBack()">sign-up</button>
+                                onclick="moveBack();moveBackMobile()">sign-up</button>
                         </div>
                     </div>
                     <div class="form_back_right">
@@ -52,7 +52,7 @@
                             <p>Log into your profile!</p>
                             <button id="login"
                                 type="button"
-                                onclick="move()">login</button>
+                                onclick="move();moveMobile()">login</button>
                         </div>
                     </div>
 
@@ -91,13 +91,51 @@
                         <input type="password"
                             placeholder="password">
                         <button id="login_front"
-                            class="orange"
+                            class="orange margin-top"
+                            type="button"
+                            onclick="">register</button>
+
+                    </div>
+                    </div>
+
+                    <div id="moveable_mobile"
+                    class="form_front">
+
+                    <div id="login_form_mobile"
+                        class="form_data">
+                        <h2>Login</h2>
+                        <hr>
+                        <input type="text"
+                            placeholder="username">
+                        <input type="password"
+                            placeholder="password">
+                        <a href="todo.html">
+                            <button id="login_front"
+                                class="orange"
+                                type="button"
+                                onclick="">login</button></a>
+                    </div>
+
+                    <div id="register_form_mobile"
+                        class="inactive">
+                        <h2>Register</h2>
+                        <hr>
+                        <input type="text"
+                            placeholder="name">
+                        <input type="text"
+                            placeholder="username">
+                        <input type="password"
+                            placeholder="password">
+                        <button id="login_front"
+                            class="orange margin-top"
                             type="button"
                             onclick="">register</button>
 
                     </div>
 
                 </div>
+
+                    
 
 
 

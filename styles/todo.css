@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+a {
+    color: black;
+}
+
 body {
     height: 100%;
     font-family: 'Raleway', sans-serif;
@@ -72,8 +76,42 @@ section {
     width: 80%;
     color: white;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    flex-direction: column;
+}
+
+input {
+    height: 50px;
+    width: 250px;
+    border: none;
+    padding-left: 10px;
+    margin: 20px 0;
+}
+
+.todo_list {
+    width: 80%;
+}
+
+.todo_list li {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px;
+}
+
+.todo_list li:hover {
+    background-color: rgba(102, 117, 187, 0.7);
+}
+
+.todo_list li:hover span {
+    opacity: 1;
+}
+
+.todo_list span {
+    align-self: flex-start;
+    opacity: 0;
+    cursor: pointer;
 }
 
 .inactive {

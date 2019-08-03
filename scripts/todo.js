@@ -19,3 +19,13 @@ function switchPpl() {
     cal.setAttribute('class', 'inactive');
     ppl.setAttribute('class', 'none');
 };
+
+function deleteTodo() {
+    let allSpans = document.querySelectorAll('span');
+
+    for(let span of allSpans) {
+        span.addEventListener('click', function() { span.parentElement.remove(); event.stopPropagation(); });
+    }
+};
+
+deleteTodo();

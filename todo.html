@@ -26,9 +26,17 @@
         <link rel="stylesheet"
             href="styles/todo.css">
 
-        <!-- JS link -->
+        <!-- jQuery link -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- Vue JS link -->
+        <script src="https://cdn.jsdelivr.net/npm/vue"
+            defer></script>
+
+        <!-- JS links -->
         <script src="scripts/todo.js"
             defer></script>
+        <script src="scripts/datetime.js" defer></script>
 
         <title>To Do</title>
     </head>
@@ -45,9 +53,7 @@
                         <li onclick="switchTodo()"><i class="fas fa-clipboard-list fa-3x"></i></li>
                         <li onclick="switchCal()"><i class="fas fa-calendar-alt fa-3x"></i></li>
                         <li onclick="switchPpl()"><i class="fas fa-users fa-3x"></i></li>
-                        <a href="index.html">
-                            <li><i class="fas fa-sign-out-alt fa-3x"></i></li>
-                        </a>
+                        <li><a href="index.html"><i class="fas fa-sign-out-alt fa-3x"></i></a></li>
                     </ul>
 
                 </nav>
@@ -57,8 +63,8 @@
                     <input type="text"
                         placeholder="add new item here" maxlength="30">
 
-                        <span id="settings_button" class="settings_button" onclick="settingsButton()"><i class="fas fa-tools fa-2x"></i></span>
-                        <span id="save_button" class="save_button"><i class="fas fa-save fa-2x"></i></span>
+                        <span id="settings_button" class="settings_button clicked" onclick="settingsButton()"><i class="fas fa-tools fa-2x"></i></span>
+                        <span id="save_button" class="save_button clicked"><i class="fas fa-save fa-2x"></i></span>
 
                     <ul id="todo_list"
                         class="todo_list">
@@ -72,21 +78,25 @@
 
                 <section id="calendar"
                     class="inactive">
-                    <p>calendar coming soon...</p>
+
+                   <div id="date">
+                        {{ message }}
+                   </div>
+
                 </section>
 
                 <section id="people"
                     class="inactive">
-                    <p>people coming soon...</p>
+                    <p>coming soon...</p>
                 </section>
 
                 <section id="settings_area" class="settings_inactive">
 
                     <ul class="settings_items">
-                        <li onclick="deleteAll()"><span><i class="fas fa-ban fa-2x"></i></span>delete all</li>
-                        <li onclick="deleteMarked()"><span><i class="fas fa-backspace fa-2x"></i></span>delete marked</li>
-                        <li onclick="hideMarked()"><span><i class="fas fa-eye fa-2x"></i></span>hide marked</li>
-                        <li onclick="showAll()"><span><i class="far fa-eye fa-2x"></i></span>show all</li>
+                        <li class="clicked" onclick="deleteAll()"><span><i class="fas fa-ban"></i></span>delete all</li>
+                        <li class="clicked" onclick="deleteMarked()"><span class="clicked"><i class="fas fa-backspace"></i></span>delete marked</li>
+                        <li class="clicked" onclick="hideMarked()"><span class="clicked"><i class="fas fa-eye"></i></span>hide marked</li>
+                        <li class="clicked" onclick="showAll()"><span class="clicked"><i class="far fa-eye"></i></span>show all</li>
                     </ul>
 
                 </section>

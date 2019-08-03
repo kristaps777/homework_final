@@ -141,3 +141,5 @@ function loadTodo() {
         deleteTodo();
     }
 };
+
+loadTodo();

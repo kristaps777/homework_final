@@ -7,8 +7,15 @@
 }
 
 a {
-    color: black;
+    color: white;
+    display: block;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 
 body {
     height: 100%;
@@ -44,19 +51,20 @@ main {
     height: 70%;
     display: flex;
     position: relative;
+    flex-direction: column;
 }
 
 nav {
-    height: 100%;
-    width: 20%;
+    height: 20%;
+    width: 100%;
 }
 
 .navigation {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     height: 100%;
     width: 100%;
-    border-right: 1px solid white;
+    border-bottom: 1px solid white;
     justify-content: center;
 }
 
@@ -64,7 +72,8 @@ nav {
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 20px 10px;
+    align-items: center;
+    padding: 10px;
     color: white;
 }
 
@@ -74,9 +83,13 @@ nav {
     cursor: pointer;
 }
 
+.navigation li:hover a {
+    color: rgba(27, 35, 71, 0.7);
+}
+
 section {
     height: 100%;
-    width: 80%;
+    width: 100%;
     color: white;
     display: flex;
     justify-content: flex-start;
@@ -86,7 +99,7 @@ section {
 
 input[type = 'text']{
     height: 50px;
-    width: 250px;
+    width: 150px;
     border: none;
     padding-left: 10px;
     margin: 20px 0;
@@ -131,8 +144,16 @@ input::placeholder {
     cursor: pointer;
 }
 
+.clicked:active {
+    transform: scale(.8);
+}
+
+.clicked:active span {
+    transform: scale(.8);
+}
+
 .todo_list {
-    width: 90%;
+    width: 100%;
     height: 100%;
     overflow-y: auto;
 }
@@ -151,7 +172,7 @@ input::placeholder {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 20px 50px;
+    padding: 20px 20px;
     align-items: center;
 }
 
@@ -176,7 +197,7 @@ input::placeholder {
 /* settings styles */
 .settings {
     height: 15%;
-    width: 80%;
+    width: 100%;
     color: white;
     display: flex;
     justify-content: flex-start;
@@ -189,6 +210,7 @@ input::placeholder {
     animation-duration: 1s;
     transition: ease-in-out;
     transition: .5s;
+    font-size: .8em;
 }
 
 @keyframes settings {
@@ -232,3 +254,63 @@ input::placeholder {
 .settings_items span {
     margin-bottom: 5px;
 }
+
+/* calendar section styles */
+#calendar {
+    justify-content: center;
+}
+
+#date {
+    width: 30%;
+    height: 40%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+ /* media queries */
+ @media (min-width: 576px) {
+ 
+  }
+  
+  @media (min-width: 992px) {
+    .app_container {
+        flex-direction: row;
+    }
+    nav {
+        height: 100%;
+        width: 20%;
+    }
+    .navigation {
+        flex-direction: column;
+        border-right: 1px solid white;
+        border-bottom: none;
+    }
+    .navigation li {
+        justify-content: center;
+        padding: 20px 10px;
+    }
+    section {
+        height: 100%;
+        width: 80%;
+    }
+    .settings {
+        width: 80%;
+        font-size: 1em;
+    }
+    .settings i{
+        font-size: 2em;
+    }
+    input[type = 'text']{
+        height: 50px;
+        width: 250px;
+    }
+    .todo_list {
+        width: 90%;
+    }
+    .todo_list li {
+        padding: 20px 50px;
+    }
+  }

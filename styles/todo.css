@@ -65,10 +65,12 @@ nav {
     display: flex;
     justify-content: center;
     padding: 20px 10px;
+    color: white;
 }
 
 .navigation li:hover {
     background-color: white;
+    color: rgba(27, 35, 71, 0.7);
     cursor: pointer;
 }
 
@@ -82,13 +84,25 @@ section {
     flex-direction: column;
 }
 
-input {
+input[type = 'text']{
     height: 50px;
     width: 250px;
     border: none;
     padding-left: 10px;
     margin: 20px 0;
     border-radius: 50px;
+}
+
+input[type = 'checkbox']{
+    height: 20px;
+    width: 20px;
+    border: none;
+    order: -1;
+}
+
+input[type = 'checkbox']:checked+label{
+    color: grey;
+    text-decoration: line-through;
 }
 
 input:focus {
@@ -110,8 +124,15 @@ input::placeholder {
     cursor: pointer;
 }
 
+.save_button {
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    cursor: pointer;
+}
+
 .todo_list {
-    width: 80%;
+    width: 90%;
     height: 100%;
     overflow-y: auto;
 }
@@ -130,7 +151,8 @@ input::placeholder {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 20px 10px;
+    padding: 20px 50px;
+    align-items: center;
 }
 
 .todo_list li:hover {
@@ -199,6 +221,7 @@ input::placeholder {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    text-align: center;
 }
 
 .settings_items li:hover {

@@ -58,12 +58,14 @@
                         placeholder="add new item here" maxlength="30">
 
                         <span id="settings_button" class="settings_button" onclick="settingsButton()"><i class="fas fa-tools fa-2x"></i></span>
+                        <span id="save_button" class="save_button"><i class="fas fa-save fa-2x"></i></span>
 
                     <ul id="todo_list"
                         class="todo_list">
-                        <li>#item1<span class="td_entry"><i class="fas fa-trash-alt"></i></span></li>
-                        <li>#item2<span class="td_entry"><i class="fas fa-trash-alt"></i></span></li>
-                        <li>#item3<span class="td_entry"><i class="fas fa-trash-alt"></i></span></li>
+                        <!-- <li><input class="td_entry" type="checkbox" /><label>#item1</label><span><i class="fas fa-trash-alt"></i></span></li>
+                        <li><input class="td_entry" type="checkbox" /><label>#item2</label><span><i class="fas fa-trash-alt"></i></span></li>
+                        <li><input class="td_entry" type="checkbox" /><label>#item3</label><span><i class="fas fa-trash-alt"></i></span></li> -->
+                        
                     </ul>
 
                 </section>
@@ -82,9 +84,9 @@
 
                     <ul class="settings_items">
                         <li onclick="deleteAll()"><span><i class="fas fa-ban fa-2x"></i></span>delete all</li>
-                        <li><span><i class="fas fa-backspace fa-2x"></i></span>delete completed</li>
-                        <li><span><i class="fas fa-eye fa-2x"></i></span>show completed</li>
-                        <li><span><i class="far fa-eye fa-2x"></i></span>show active</li>
+                        <li onclick="deleteMarked()"><span><i class="fas fa-backspace fa-2x"></i></span>delete marked</li>
+                        <li onclick="hideMarked()"><span><i class="fas fa-eye fa-2x"></i></span>hide marked</li>
+                        <li onclick="showAll()"><span><i class="far fa-eye fa-2x"></i></span>show all</li>
                     </ul>
 
                 </section>

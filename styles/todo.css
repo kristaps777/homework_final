@@ -43,6 +43,7 @@ main {
     width: 60%;
     height: 70%;
     display: flex;
+    position: relative;
 }
 
 nav {
@@ -87,6 +88,26 @@ input {
     border: none;
     padding-left: 10px;
     margin: 20px 0;
+    border-radius: 50px;
+}
+
+input:focus {
+    outline: none;
+}
+
+input::placeholder {
+    font-style: italic;
+}
+
+#todo {
+    position: relative;
+}
+
+.settings_button {
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    cursor: pointer;
 }
 
 .todo_list {
@@ -127,5 +148,39 @@ input {
 }
 
 .inactive {
+    display: none;
+}
+
+/* settings styles */
+.settings {
+    height: 15%;
+    width: 80%;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(102, 117, 187, 0.7);
+    position: absolute;
+    right: 0;
+    bottom: -15%;
+    animation-name: settings;
+    animation-duration: 1s;
+    transition: ease-in-out;
+}
+
+@keyframes settings {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.settings_inactive {
     display: none;
 }

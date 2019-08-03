@@ -143,6 +143,10 @@ input {
     padding-left: 10px;
 }
 
+input:focus, button:focus {
+    outline: none;
+}
+
 .inactive {
     display: none;
 }

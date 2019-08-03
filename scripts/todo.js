@@ -63,3 +63,13 @@ function deleteTodo() {
         });
     }
 };
+
+// settings button function
+function settingsButton() {
+    const area = document.getElementById('settings_area');
+    if (area.getAttribute('class') == 'settings') {
+        area.setAttribute('class', 'settings_inactive');
+    } else {
+        area.setAttribute('class', 'settings');
+    }
+};

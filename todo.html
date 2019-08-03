@@ -55,11 +55,13 @@
                 <section id="todo">
 
                     <input type="text"
-                        placeholder="add new item here">
+                        placeholder="add new item here" maxlength="30">
+
+                        <span id="settings_button" class="settings_button" onclick="settingsButton()"><i class="fas fa-tools fa-2x"></i></span>
 
                     <ul id="todo_list"
                         class="todo_list">
-                        <li>#item1 more text than usual<span><i class="fas fa-trash-alt"></i></span></li>
+                        <li>#item1<span><i class="fas fa-trash-alt"></i></span></li>
                         <li>#item2<span><i class="fas fa-trash-alt"></i></span></li>
                         <li>#item3<span><i class="fas fa-trash-alt"></i></span></li>
                     </ul>
@@ -74,6 +76,10 @@
                 <section id="people"
                     class="inactive">
                     <p>people coming soon...</p>
+                </section>
+
+                <section id="settings_area" class="settings_inactive">
+
                 </section>
 
             </div>

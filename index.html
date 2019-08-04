@@ -31,34 +31,36 @@
 
         <main>
 
+            <!-- login form desktop -->
             <div class="form_outer">
 
                 <div class="form_back">
 
                     <div class="form_back_left">
+
                         <div class="back_left_container">
                             <h2>Don't have an account?</h2>
                             <hr>
                             <p>Take a minute and register!</p>
                             <button id="signin"
                                 type="button"
-                                onclick="moveBack();moveBackMobile()">sign-up</button>
+                                onclick="moveBack()">sign-up</button>
                         </div>
+
                     </div>
+
                     <div class="form_back_right">
+
                         <div class="back_right_container">
                             <h2>Have an account?</h2>
                             <hr>
                             <p>Log into your profile!</p>
                             <button id="login"
                                 type="button"
-                                onclick="move();moveMobile()">login</button>
+                                onclick="move()">login</button>
                         </div>
+
                     </div>
-
-
-
-
 
                 </div>
 
@@ -91,43 +93,7 @@
                         <input type="password"
                             placeholder="password">
                         <button id="login_front"
-                            class="orange margin-top"
-                            type="button"
-                            onclick="">register</button>
-
-                    </div>
-                    </div>
-
-                    <div id="moveable_mobile"
-                    class="form_front">
-
-                    <div id="login_form_mobile"
-                        class="form_data">
-                        <h2>Login</h2>
-                        <hr>
-                        <input type="text"
-                            placeholder="username">
-                        <input type="password"
-                            placeholder="password">
-                        <a href="todo.html">
-                            <button id="login_front"
-                                class="orange"
-                                type="button"
-                                onclick="">login</button></a>
-                    </div>
-
-                    <div id="register_form_mobile"
-                        class="inactive">
-                        <h2>Register</h2>
-                        <hr>
-                        <input type="text"
-                            placeholder="name">
-                        <input type="text"
-                            placeholder="username">
-                        <input type="password"
-                            placeholder="password">
-                        <button id="login_front"
-                            class="orange margin-top"
+                            class="orange margin_top"
                             type="button"
                             onclick="">register</button>
 
@@ -135,10 +101,79 @@
 
                 </div>
 
-                    
+             </div>
 
 
+             <!-- login form mobile -->
+             <div class="form_outer_mobile">
 
+                    <div class="form_back">
+    
+                        <div class="form_back_left">
+    
+                            <div class="back_left_container">
+                                <h2 class="padding_top">Do you have an account?</h2>
+                                <hr>
+                                <p>Login or register!</p>
+                                <button id="login_mobile" class="button_mobile margin_bottom"
+                                    type="button"
+                                    onclick="">login</button>
+                                <button id="signup_mobile" class="button_mobile"
+                                    type="button"
+                                    onclick="">sign-up</button>
+                            </div>
+    
+                        </div>
+    
+                        <div class="form_back_right">
+    
+                            <!-- <div class="back_right_container"> -->
+                                
+                                    <div id="switchable"
+                                    class="form_front_mobile">
+                
+                                    <div id="login_form_mobile"
+                                        class="form_data">
+                                        <h2>Login</h2>
+                                        <hr>
+                                        <input type="text"
+                                            placeholder="username">
+                                        <input type="password"
+                                            placeholder="password">
+                                        <a href="todo.html">
+                                            <button id="login_front"
+                                                class="button_mobile orange"
+                                                type="button"
+                                                onclick="">login</button></a>
+                                    </div>
+                
+                                    <div id="register_form_mobile"
+                                        class="inactive">
+                                        <h2>Register</h2>
+                                        <hr>
+                                        <input type="text"
+                                            placeholder="name">
+                                        <input type="text"
+                                            placeholder="username">
+                                        <input type="password"
+                                            placeholder="password">
+                                        <button id="login_front"
+                                            class="button_mobile orange margin_top"
+                                            type="button"
+                                            onclick="">register</button>
+                
+                                    </div>
+                
+                                </div>
+
+
+                            <!-- </div> -->
+    
+                        </div>
+    
+                    </div>             
+    
+                    </div>
 
         </main>
 

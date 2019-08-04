@@ -15,3 +15,17 @@ function moveBack() {
     regForm.setAttribute('class', 'form_data');
     loginForm.setAttribute('class', 'inactive');
 };
+
+function displRegMob() {
+    const regForm = document.getElementById('register_form_mobile');
+    const logForm = document.getElementById('login_form_mobile');
+    regForm.setAttribute('class', 'form_data');
+    logForm.setAttribute('class', 'inactive');
+};
+
+function displLogMob() {
+    const regForm = document.getElementById('register_form_mobile');
+    const logForm = document.getElementById('login_form_mobile');
+    regForm.setAttribute('class', 'inactive');
+    logForm.setAttribute('class', 'form_data');
+};

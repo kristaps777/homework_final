@@ -119,7 +119,7 @@ input[type = 'checkbox']:checked+label{
     text-decoration: line-through;
 }
 
-input:focus {
+input:focus, button:focus, a:focus {
     outline: none;
 }
 

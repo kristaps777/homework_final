@@ -1,5 +1,5 @@
 const days = [
-    'Sunay',
+    'Sunday',
     'Monday',
     'Tuesday',
     'Wednesday',

@@ -3,29 +3,23 @@
 
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport"
-            content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible"
-            content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
         <!-- Google font link -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap"
-            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 
         <!-- Favicon link -->
-        <link rel="shortcut icon"
-            href="#">
+        <link rel="shortcut icon" href="#">
 
         <!-- CSS link -->
-        <link rel="stylesheet"
-            href="styles/index.css">
+        <link rel="stylesheet" href="styles/index.css">
 
         <!-- jQuery link -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
         <!-- JS link -->
-        <script src="scripts/script.js"
-            defer></script>
+        <script src="scripts/script.js" defer></script>
 
         <title>To Do</title>
     </head>
@@ -45,9 +39,7 @@
                             <h2>Don't have an account?</h2>
                             <hr>
                             <p>Take a minute and register!</p>
-                            <button id="signin"
-                                type="button"
-                                onclick="moveBack()">sign-up</button>
+                            <button id="signin" type="button" onclick="moveBack()">sign-up</button>
                         </div>
 
                     </div>
@@ -58,121 +50,91 @@
                             <h2>Have an account?</h2>
                             <hr>
                             <p>Log into your profile!</p>
-                            <button id="login"
-                                type="button"
-                                onclick="move()">login</button>
+                            <button id="login" type="button" onclick="move()">login</button>
                         </div>
 
                     </div>
 
                 </div>
 
-                <div id="moveable"
-                    class="form_front">
+                <div id="moveable" class="form_front">
 
-                    <div id="login_form"
-                        class="form_data">
+                    <div id="login_form" class="form_data">
                         <h2>Login</h2>
                         <hr>
-                        <input type="text"
-                            placeholder="username">
-                        <input type="password"
-                            placeholder="password">
+                        <input id="username" type="text" placeholder="username" value="username">
+                        <input id="password" type="password" placeholder="password">
                         <a href="todo.html">
-                            <button id="login_front"
-                                class="orange"
-                                type="button"
-                                onclick="">login</button></a>
+                            <button id="login_front" class="orange" type="button" onclick="">login</button></a>
                     </div>
 
-                    <div id="register_form"
-                        class="inactive">
+                    <div id="register_form" class="inactive">
                         <h2>Register</h2>
                         <hr>
-                        <input type="text"
-                            placeholder="name">
-                        <input type="text"
-                            placeholder="username">
-                        <input type="password"
-                            placeholder="password">
-                        <button id="login_front"
-                            class="orange margin_top"
-                            type="button"
-                            onclick="">register</button>
+                        <input type="text" placeholder="name">
+                        <input type="text" placeholder="username">
+                        <input type="password" placeholder="password">
+                        <button id="login_front" class="orange margin_top" type="button" onclick="">register</button>
 
                     </div>
 
                 </div>
 
-             </div>
+            </div>
 
 
-             <!-- login form mobile -->
-             <div class="form_outer_mobile">
+            <!-- login form mobile -->
+            <div class="form_outer_mobile">
 
-                    <div class="form_back">
-    
-                        <div class="form_back_left">
-    
-                            <div class="back_left_container">
-                                <h2 class="padding_top">Do you have an account?</h2>
-                                <hr>
-                                <p>Login or register!</p>
-                                <button id="login_mobile" class="button_mobile margin_bottom"
-                                    type="button"
-                                    onclick="displLogMob()">login</button>
-                                <button id="signup_mobile" class="button_mobile"
-                                    type="button"
-                                    onclick="displRegMob()">sign-up</button>
-                            </div>
-    
+                <div class="form_back">
+
+                    <div class="form_back_left">
+
+                        <div class="back_left_container">
+                            <h2 class="padding_top">Do you have an account?</h2>
+                            <hr>
+                            <p>Login or register!</p>
+                            <button id="login_mobile" class="button_mobile margin_bottom" type="button"
+                                onclick="displLogMob()">login</button>
+                            <button id="signup_mobile" class="button_mobile" type="button"
+                                onclick="displRegMob()">sign-up</button>
                         </div>
-    
-                        <div class="form_back_right">
-    
-                                
-                                    <div id="switchable"
-                                    class="form_front_mobile">
-                
-                                    <div id="login_form_mobile"
-                                        class="form_data">
-                                        <h2>Login</h2>
-                                        <hr>
-                                        <input type="text"
-                                            placeholder="username">
-                                        <input type="password"
-                                            placeholder="password">
-                                        <a href="todo.html">
-                                            <button id="login_front"
-                                                class="button_mobile orange"
-                                                type="button"
-                                                onclick="">login</button></a>
-                                    </div>
-                
-                                    <div id="register_form_mobile"
-                                        class="inactive">
-                                        <h2>Register</h2>
-                                        <hr>
-                                        <input type="text"
-                                            placeholder="name">
-                                        <input type="text"
-                                            placeholder="username">
-                                        <input type="password"
-                                            placeholder="password">
-                                        <button id="login_front"
-                                            class="button_mobile orange margin_top"
-                                            type="button"
-                                            onclick="">register</button>
-                
-                                    </div>
-                
-                                </div>
-    
-                        </div>
-    
-                    </div>             
-    
+
                     </div>
+
+                    <div class="form_back_right">
+
+
+                        <div id="switchable" class="form_front_mobile">
+
+                            <div id="login_form_mobile" class="form_data">
+                                <h2>Login</h2>
+                                <hr>
+                                <input type="text" placeholder="username">
+                                <input type="password" placeholder="password">
+                                <a href="todo.php">
+                                    <button id="login_front" class="button_mobile orange" type="button"
+                                        onclick="">login</button></a>
+                            </div>
+
+                            <div id="register_form_mobile" class="inactive">
+                                <h2>Register</h2>
+                                <hr>
+                                <input type="text" placeholder="name">
+                                <input type="text" placeholder="username">
+                                <input type="password" placeholder="password">
+                                <button id="login_front" class="button_mobile orange margin_top" type="button"
+                                    onclick="">register</button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </main>
 

@@ -3,39 +3,30 @@
 
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport"
-            content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible"
-            content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
         <!-- Google font link -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap"
-            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 
         <!-- Font Awesome link -->
-        <link rel="stylesheet"
-            href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-            integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-            crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+            integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
         <!-- Favicon link -->
-        <link rel="shortcut icon"
-            href="#">
+        <link rel="shortcut icon" href="#">
 
         <!-- CSS link -->
-        <link rel="stylesheet"
-            href="styles/todo.css">
+        <link rel="stylesheet" href="styles/todo.css">
 
         <!-- jQuery link -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
         <!-- Vue JS link -->
-        <script src="https://cdn.jsdelivr.net/npm/vue"
-            defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue" defer></script>
 
         <!-- JS links -->
-        <script src="scripts/todo.js"
-            defer></script>
+        <script src="scripts/todo.js" defer></script>
         <script src="scripts/datetime.js" defer></script>
 
         <title>To Do</title>
@@ -60,43 +51,48 @@
 
                 <section id="todo">
 
-                    <input type="text"
-                        placeholder="add new item here" maxlength="30">
+                    <input type="text" placeholder="add new item here" maxlength="30">
 
-                        <span id="settings_button" class="settings_button clicked" onclick="settingsButton()"><i class="fas fa-tools"></i></span>
-                        <span id="save_button" class="save_button clicked"><i class="fas fa-save"></i></span>
+                    <span id="settings_button" class="settings_button clicked" onclick="settingsButton()"><i
+                            class="fas fa-tools"></i></span>
+                    <span id="save_button" class="save_button clicked"><i class="fas fa-save"></i></span>
 
-                    <ul id="todo_list"
-                        class="todo_list">
+                    <ul id="todo_list" class="todo_list">
                         <!-- <li><input class="td_entry" type="checkbox" /><label>#item1</label><span><i class="fas fa-trash-alt"></i></span></li>
                         <li><input class="td_entry" type="checkbox" /><label>#item2</label><span><i class="fas fa-trash-alt"></i></span></li>
                         <li><input class="td_entry" type="checkbox" /><label>#item3</label><span><i class="fas fa-trash-alt"></i></span></li> -->
-                        
+
                     </ul>
 
                 </section>
 
-                <section id="calendar"
-                    class="inactive">
+                <section id="calendar" class="inactive">
 
-                   <div id="date">
+                    <div id="date">
                         {{ message }}
-                   </div>
+                    </div>
 
                 </section>
 
-                <section id="people"
-                    class="inactive">
-                    <p>coming soon...</p>
+                <section id="people" class="inactive">
+                    <?php
+                    
+                    require_once("db.php");
+                    getData();
+                    
+                    ?>
                 </section>
 
                 <section id="settings_area" class="settings_inactive">
 
                     <ul class="settings_items">
                         <li class="clicked" onclick="deleteAll()"><span><i class="fas fa-ban"></i></span></li>
-                        <li class="clicked" onclick="deleteMarked()"><span class="clicked"><i class="fas fa-backspace"></i></span></li>
-                        <li class="clicked" onclick="hideMarked()"><span class="clicked"><i class="fas fa-eye"></i></span></li>
-                        <li class="clicked" onclick="showAll()"><span class="clicked"><i class="far fa-eye"></i></span></li>
+                        <li class="clicked" onclick="deleteMarked()"><span class="clicked"><i
+                                    class="fas fa-backspace"></i></span></li>
+                        <li class="clicked" onclick="hideMarked()"><span class="clicked"><i
+                                    class="fas fa-eye"></i></span></li>
+                        <li class="clicked" onclick="showAll()"><span class="clicked"><i class="far fa-eye"></i></span>
+                        </li>
                     </ul>
 
                 </section>

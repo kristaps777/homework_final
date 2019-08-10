@@ -40,6 +40,13 @@
 
                 <nav>
 
+                    <div class="db_status">
+                        <?php                  
+                            require_once("../private/db.php");
+                            getDB_status();
+                        ?>
+                    </div>
+
                     <ul class="navigation">
                         <li onclick="switchTodo()"><i class="fas fa-clipboard-list"></i></li>
                         <li onclick="switchCal()"><i class="fas fa-calendar-alt"></i></li>
@@ -51,18 +58,26 @@
 
                 <section id="todo">
 
-                    <input type="text" placeholder="add new item here" maxlength="30">
+                    <form action="todo.php" method="post">
+                        <input class="td_input" name="task_name" type="text" placeholder="add new item here" maxlength="60">
+                    </form>
 
                     <span id="settings_button" class="settings_button clicked" onclick="settingsButton()"><i
                             class="fas fa-tools"></i></span>
-                    <span id="save_button" class="save_button clicked"><i class="fas fa-save"></i></span>
+                    <span id="save_button" class="save_button clicked" onclick="launch()"><i class="fas fa-save"></i></span>
+
 
                     <ul id="todo_list" class="todo_list">
+<?php
+require_once("../private/new_todo.php");
+   
+?>
+
                         <!-- <li><input class="td_entry" type="checkbox" /><label>#item1</label><span><i class="fas fa-trash-alt"></i></span></li>
                         <li><input class="td_entry" type="checkbox" /><label>#item2</label><span><i class="fas fa-trash-alt"></i></span></li>
                         <li><input class="td_entry" type="checkbox" /><label>#item3</label><span><i class="fas fa-trash-alt"></i></span></li> -->
-
                     </ul>
+                    
 
                 </section>
 
@@ -75,19 +90,14 @@
                 </section>
 
                 <section id="people" class="inactive">
-                    <?php
-                    
-                    require_once("db.php");
-                    getData();
-                    
-                    ?>
+                
                 </section>
 
                 <section id="settings_area" class="settings_inactive">
 
                     <ul class="settings_items">
-                        <li class="clicked" onclick="deleteAll()"><span><i class="fas fa-ban"></i></span></li>
-                        <li class="clicked" onclick="deleteMarked()"><span class="clicked"><i
+                        <li class="clicked" onclick=""><span><i class="fas fa-ban"></i></span></li>
+                        <li class="clicked" onclick=""><span class="clicked"><i
                                     class="fas fa-backspace"></i></span></li>
                         <li class="clicked" onclick="hideMarked()"><span class="clicked"><i
                                     class="fas fa-eye"></i></span></li>
@@ -99,7 +109,10 @@
 
             </div>
 
+
         </main>
+
+        
 
     </body>
 

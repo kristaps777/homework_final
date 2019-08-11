@@ -1,5 +1,5 @@
 <?php
-  require_once("../private/config.php");
+  require_once("config.php");
   if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['ident'])) {
         $connect_DB = mysqli_connect(SERVER, USER, PW, DB);
 
@@ -13,5 +13,5 @@ $sql = "DELETE FROM todo_list WHERE id=$_POST[ident]";
 
 mysqli_query($connect_DB, $sql);
 $connect_DB->close();
-header("Location: todo.php");
+header("Location: ../public/todo.php");
 };

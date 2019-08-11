@@ -58,7 +58,7 @@
 
                 <section id="todo">
 
-                    <form action="todo.php" method="post">
+                    <form action="../private/new_todo.php" method="post">
                         <input class="td_input" name="task_name" type="text" placeholder="add new item here" maxlength="60">
                     </form>
 
@@ -69,8 +69,8 @@
 
                     <ul id="todo_list" class="todo_list">
 <?php
-require_once("../private/new_todo.php");
-   
+require_once("../private/db.php");
+   getData();
 ?>
 
                         <!-- <li><input class="td_entry" type="checkbox" /><label>#item1</label><span><i class="fas fa-trash-alt"></i></span></li>
@@ -85,6 +85,13 @@ require_once("../private/new_todo.php");
 
                     <div id="date">
                         {{ message }}
+                    </div>
+
+                    <div id="lastmod">
+                    <?php
+// outputs e.g. 'Last modified: March 04 1998 20:43:59.'
+echo "Last modified: " . date ("F d Y H:i:s.", getlastmod());
+?>
                     </div>
 
                 </section>

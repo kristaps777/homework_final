@@ -20,9 +20,9 @@
         $stmt->execute();
         $connect_DB->close();
     }
+header("Location: ../public/todo.php");
 
-
-require_once('db.php');
- $qry = "SELECT * FROM todo_list ORDER BY task ASC";
- getData($qry);
-require_once('edit.php');
+// require_once('db.php');
+//  $qry = "SELECT * FROM todo_list ORDER BY task ASC";
+//  getData($qry);
+ ?>

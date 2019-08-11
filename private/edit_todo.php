@@ -9,17 +9,16 @@
             echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
             exit;
         }
-if (isset($_POST['submit'])) {
+
 $id = $_POST['ident'];
-// $task = 'TYUI';
-$task = '';
+$task = $_POST['edit'];
 $task = mysqli_real_escape_string($connect_DB, $_REQUEST['edit']);
 // $stmt = $connect_DB->prepare("UPDATE todo_list SET task=? WHERE id=?");
 // $stmt->bind_param("ss", $task, $id);
 
 // $stmt->execute();
 
-$sql = "UPDATE todo_list SET task='$task' WHERE id=$POST[ident]"; 
+$sql = "UPDATE todo_list SET task='$task' WHERE id=$_POST[ident]"; 
 if(mysqli_query($connect_DB, $sql)){ 
     echo "Record was updated successfully."; 
 } else { 
@@ -28,6 +27,5 @@ if(mysqli_query($connect_DB, $sql)){
 } 
 
 $connect_DB->close();
-}
-      };
-header("Location: todo.php");
+};
+header("Location: ../public/todo.php");

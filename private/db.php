@@ -49,23 +49,26 @@ foreach ($mydata as $key => $row) {
         // echo "</form>";
 
         
-        echo "<form class='task_area' action='todo.php' method='post'>";
+        echo "<form class='task_area' action='../private/edit_todo.php' method='post'>";
         echo "<input type='hidden' name='ident' value={$row[id]}>";
         echo "<input class='td_entry_edit' name='edit' type='text' maxlength='60' value='";
         echo $row['task'];
         echo "'>";
-        echo "</form>";
-
-        echo "<div class='buttons'>";
-
-        echo "<form class='edit_button' action='edit_todo.php' method='post'>";
-        echo "<input type='hidden' name='ident' value={$row[id]}>";
         echo "<button type='submit'>";
         echo "<span><i class='fas fa-edit'></i></span>";
         echo "</button>";
         echo "</form>";
 
-        echo "<form class='delete_button' action='delete_todo.php' method='post'>";
+        echo "<div class='buttons'>";
+
+        // echo "<form class='edit_button' action='../private/edit_todo.php' method='post'>";
+        // echo "<input type='hidden' name='ident' value={$row[id]}>";
+        // echo "<button type='submit' form='edit'>";
+        // echo "<span><i class='fas fa-edit'></i></span>";
+        // echo "</button>";
+        // echo "</form>";
+
+        echo "<form class='delete_button' action='../private/delete_todo.php' method='post'>";
         echo "<input type='hidden' name='ident' value={$row[id]}>";
         echo "<button type='submit'>";
         echo "<span><i class='fas fa-trash-alt'></i></span>";
@@ -90,5 +93,5 @@ foreach ($mydata as $key => $row) {
 }
 
 mysqli_close($connect_DB);
-}
+};
 ?>

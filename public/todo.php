@@ -103,7 +103,13 @@ echo "Last modified: " . date ("F d Y H:i:s.", getlastmod());
                 <section id="settings_area" class="settings_inactive">
 
                     <ul class="settings_items">
-                        <li class="clicked" onclick=""><span><i class="fas fa-ban"></i></span></li>
+                        <li class="clicked">
+                        <form action="../private/delete_all.php" method="post">
+                        <button type="submit">
+                        <span><i class="fas fa-ban"></i></span>
+                        </button>
+                        </form>
+                        </li>
                         <li class="clicked" onclick=""><span class="clicked"><i
                                     class="fas fa-backspace"></i></span></li>
                         <li class="clicked" onclick="hideMarked()"><span class="clicked"><i

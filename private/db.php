@@ -49,7 +49,7 @@ foreach ($mydata as $key => $row) {
         // echo "</form>";
 
         
-        echo "<form class='task_area' action='../private/edit_todo.php' method='post'>";
+        echo "<form id='edit' class='task_area' action='../private/edit_todo.php' method='post'>";
         echo "<input type='hidden' name='ident' value={$row[id]}>";
         echo "<input class='td_entry_edit' name='edit' type='text' maxlength='60' value='";
         echo $row['task'];

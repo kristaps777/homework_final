@@ -10,9 +10,14 @@
             exit;
         }
         
-$sql = "DELETE FROM todo_list WHERE id=$_POST[ident]"; 
+// $sql = "DELETE FROM todo_list WHERE id=$_POST[ident]";
 
-mysqli_query($connect_DB, $sql);
+$stmt = $connect_DB->prepare("DELETE FROM todo_list WHERE id = ?");
+$stmt->bind_param("s", $_POST['ident']);
+
+
+// mysqli_query($connect_DB, $sql);
+$stmt->execute();
 $connect_DB->close();
 header("Location: ../public/todo.php");
 };

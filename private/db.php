@@ -40,18 +40,10 @@ $mydata = $result->fetch_all(MYSQLI_ASSOC);
 
 foreach ($mydata as $key => $row) {
         echo "<li class='todo_list_item'>";
-
-        // echo "<form class='task_area' action='todo.php' method='post'>";
-        // echo "<input type='hidden' name='ident' value={$row[id]}>";
-        // echo "<textarea class='td_entry_edit' name='edit' type='text' maxlength='60' spellcheck='false'>";
-        // echo $row['task'];
-        // echo "</textarea>";
-        // echo "</form>";
-
         
         echo "<form id='edit' class='task_area' action='../private/edit_todo.php' method='post'>";
         echo "<input type='hidden' name='ident' value={$row[id]}>";
-        echo "<input class='td_entry_edit' name='edit' type='text' maxlength='60' value='";
+        echo "<input class='td_entry_edit' name='edit' type='text' maxlength='60' spellcheck='false' value='";
         echo $row['task'];
         echo "'>";
         echo "<button type='submit'>";
@@ -60,13 +52,6 @@ foreach ($mydata as $key => $row) {
         echo "</form>";
 
         echo "<div class='buttons'>";
-
-        // echo "<form class='edit_button' action='../private/edit_todo.php' method='post'>";
-        // echo "<input type='hidden' name='ident' value={$row[id]}>";
-        // echo "<button type='submit' form='edit'>";
-        // echo "<span><i class='fas fa-edit'></i></span>";
-        // echo "</button>";
-        // echo "</form>";
 
         echo "<form class='delete_button' action='../private/delete_todo.php' method='post'>";
         echo "<input type='hidden' name='ident' value={$row[id]}>";
@@ -78,17 +63,6 @@ foreach ($mydata as $key => $row) {
         echo "</div>";
 
         echo "</li>";
-
-
-        // echo "<input type='text' style='display: none' name='ident' value={$row[id]}>";
-        // echo "<a class='edit_button' href='../private/modal.php?id=";
-        // echo $row['id'];
-        // echo "'>";
-        // echo "<span><i class='fas fa-edit'></i></span>";
-        // echo "</a>";
-        // echo "<button type='submit'>";
-        // echo "<span><i class='fas fa-trash-alt'></i></span>";
-        // echo "</button></form></li>";
   
 }
 

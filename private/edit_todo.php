@@ -10,22 +10,14 @@
             exit;
         }
 
-$id = $_POST['ident'];
-$task = $_POST['edit'];
+$id = mysqli_real_escape_string($connect_DB, $_REQUEST['ident']);
 $task = mysqli_real_escape_string($connect_DB, $_REQUEST['edit']);
-// $stmt = $connect_DB->prepare("UPDATE todo_list SET task=? WHERE id=?");
-// $stmt->bind_param("ss", $task, $id);
 
-// $stmt->execute();
-
-$sql = "UPDATE todo_list SET task='$task' WHERE id=$_POST[ident]"; 
-if(mysqli_query($connect_DB, $sql)){ 
-    echo "Record was updated successfully."; 
-} else { 
-    echo "ERROR: Could not able to execute $sql. "  
-                            . mysqli_error($link); 
-} 
+$stmt = $connect_DB->prepare("UPDATE todo_list SET task = ? WHERE id = ?");
+$stmt->bind_param("ss", $task, $id);
+$stmt->execute();
 
 $connect_DB->close();
 };
 header("Location: ../public/todo.php");
+?>

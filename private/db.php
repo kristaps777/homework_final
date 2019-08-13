@@ -1,5 +1,6 @@
 <?php
 function getDB_status() {
+    session_start();
     require_once("config.php");
     $connect_DB = mysqli_connect(SERVER, USER, PW, DB);
 
@@ -11,6 +12,18 @@ function getDB_status() {
     // exit;
 } else {
     echo $dbStatusOk;
+    echo "<div>Hello, " . $_SESSION['username'] . "!</div>";
+    // echo "<br>";
+    // echo $_SESSION['pwhash'];
+    // echo "<br>";
+
+// get userID by username and password CONTINUE FROM HERE!!!
+$sql = "SELECT id FROM users WHERE username = '$_SESSION[username]' AND pwhash = '$_SESSION[pwhash]'";
+$result = $connect_DB->query($sql);
+$mydata = $result->fetch_all(MYSQLI_ASSOC);
+foreach ($mydata as $key => $row) {
+$_SESSION['userID'] = $row['id'];
+}
 }
 };
 
@@ -27,9 +40,10 @@ function getDB() {
 };
 
 function getData() {
+session_start();
 require_once("config.php");
 $connect_DB = mysqli_connect(SERVER, USER, PW, DB);
-$sql = "SELECT * FROM todo_list ORDER BY task ASC";
+$sql = "SELECT * FROM todo_list WHERE userID = '$_SESSION[userID]'  ORDER BY task ASC";
 $result = $connect_DB->query($sql);
 $mydata = $result->fetch_all(MYSQLI_ASSOC);
 

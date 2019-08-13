@@ -358,6 +358,7 @@ input::placeholder {
     nav {
         height: 100%;
         width: 20%;
+        color: white;
     }
     .navigation {
         flex-direction: column;

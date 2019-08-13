@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once("config.php");
     if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['task_name'])) {
         $connect_DB = mysqli_connect(SERVER, USER, PW, DB);
@@ -10,8 +11,9 @@
             exit;
         }
         $mytitle = mysqli_real_escape_string($connect_DB, $_REQUEST['task_name']);
-        $stmt = $connect_DB->prepare("INSERT INTO todo_list (task) VALUES (?)");
-        $stmt->bind_param("s", $mytitle);
+        $myUserID = mysqli_real_escape_string($connect_DB, $_SESSION['userID']);
+        $stmt = $connect_DB->prepare("INSERT INTO todo_list (task, userID) VALUES (?, ?)");
+        $stmt->bind_param("ss", $mytitle, $myUserID);
 
         $stmt->execute();
         $connect_DB->close();

@@ -17,7 +17,7 @@ function getDB_status() {
     // echo $_SESSION['pwhash'];
     // echo "<br>";
 
-// get userID by username and password CONTINUE FROM HERE!!!
+// get userID by username and password
 $sql = "SELECT id FROM users WHERE username = '$_SESSION[username]' AND pwhash = '$_SESSION[pwhash]'";
 $result = $connect_DB->query($sql);
 $mydata = $result->fetch_all(MYSQLI_ASSOC);

@@ -117,16 +117,17 @@
                                         onclick="">login</button></a>
                             </div>
 
-                            <div id="register_form_mobile" class="inactive">
+                            <form id="register_form_mobile" class="inactive" action="../private/new_user.php"
+                                method="post">
                                 <h2>Register</h2>
                                 <hr>
-                                <input type="text" placeholder="name" required>
-                                <input type="text" placeholder="username" required>
-                                <input type="password" placeholder="password" required>
-                                <button id="login_front" class="button_mobile orange margin_top" type="button"
+                                <input name="name" type="text" placeholder="name" required>
+                                <input name="username" type="text" placeholder="username" required>
+                                <input name="password" type="password" placeholder="password" required>
+                                <button id="login_front" class="button_mobile orange margin_top" type="submit"
                                     onclick="">register</button>
 
-                            </div>
+                            </form>
 
                         </div>
 

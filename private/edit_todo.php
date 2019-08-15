@@ -1,6 +1,6 @@
 <?php
   session_start();
-  require_once("../private/config.php");
+  require_once("config.php");
   if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['ident'])) {
         $connect_DB = mysqli_connect(SERVER, USER, PW, DB);
 
@@ -23,5 +23,5 @@ $stmt->execute();
 
 $connect_DB->close();
 };
-header("Location: ../public/todo.php");
+header("Location: todo.php");
 ?>

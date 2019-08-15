@@ -59,7 +59,7 @@ $mydata = $result->fetch_all(MYSQLI_ASSOC);
 foreach ($mydata as $key => $row) {
         echo "<li class='todo_list_item'>";
         
-        echo "<form id='edit' class='task_area' action='../private/edit_todo.php' method='post'>";
+        echo "<form id='edit' class='task_area' action='edit_todo.php' method='post'>";
         echo "<input type='hidden' name='ident' value={$row[id]}>";
         echo "<input class='td_entry_edit' name='edit' type='text' maxlength='60' spellcheck='false' value='";
         echo $row['task'];
@@ -71,7 +71,7 @@ foreach ($mydata as $key => $row) {
 
         echo "<div class='buttons'>";
 
-        echo "<form class='delete_button' action='../private/delete_todo.php' method='post'>";
+        echo "<form class='delete_button' action='delete_todo.php' method='post'>";
         echo "<input type='hidden' name='ident' value={$row[id]}>";
         echo "<button type='submit'>";
         echo "<span><i class='fas fa-trash-alt'></i></span>";

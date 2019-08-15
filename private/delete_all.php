@@ -22,5 +22,5 @@ $stmt->execute();
 // mysqli_query($connect_DB, $sql);
 
 $connect_DB->close();
-header("Location: ../public/todo.php");
+header("Location: todo.php");
 };

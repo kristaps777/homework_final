@@ -1,3 +1,8 @@
+<?php
+if (!isset($_SESSION['username'])) {
+    header("Location: ../public/index.html");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +22,7 @@
         <link rel="shortcut icon" href="#">
 
         <!-- CSS link -->
-        <link rel="stylesheet" href="styles/todo.css">
+        <link rel="stylesheet" href="../public/styles/todo.css">
 
         <!-- jQuery link -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -26,8 +31,8 @@
         <script src="https://cdn.jsdelivr.net/npm/vue" defer></script>
 
         <!-- JS links -->
-        <script src="scripts/todo.js" defer></script>
-        <script src="scripts/datetime.js" defer></script>
+        <script src="../public/scripts/todo.js" defer></script>
+        <script src="../public/scripts/datetime.js" defer></script>
 
         <title>To Do</title>
     </head>
@@ -42,7 +47,7 @@
 
                     <div class="db_status">
                         <?php                  
-                            require_once("../private/db.php");
+                            require_once("db.php");
                             getDB_status();
                         ?>  
                     </div>
@@ -51,14 +56,14 @@
                         <li onclick="switchTodo()"><i class="fas fa-clipboard-list"></i></li>
                         <li onclick="switchCal()"><i class="fas fa-calendar-alt"></i></li>
                         <li onclick="switchPpl()"><i class="fas fa-cloud-sun-rain"></i></li>
-                        <li><a href="index.html"><i class="fas fa-sign-out-alt"></i></a></li>
+                        <li><a href="logout_user.php"><i class="fas fa-sign-out-alt"></i></a></li>
                     </ul>
 
                 </nav>
 
                 <section id="todo">
 
-                    <form action="../private/new_todo.php" method="post">
+                    <form action="new_todo.php" method="post">
                         <input class="td_input" name="task_name" type="text" placeholder="add new item here" maxlength="60">
                     </form>
 
@@ -69,7 +74,7 @@
 
                     <ul id="todo_list" class="todo_list">
 <?php
-require_once("../private/db.php");
+require_once("db.php");
    getData();
 ?>
 
@@ -109,7 +114,7 @@ echo "Last modified: " . date ("F d Y H:i:s.", getlastmod());
 
                     <ul class="settings_items">
                         <li class="clicked">
-                        <form action="../private/delete_all.php" method="post">
+                        <form action="delete_all.php" method="post">
                         <button type="submit">
                         <span><i class="fas fa-ban"></i></span>
                         </button>

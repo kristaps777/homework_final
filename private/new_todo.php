@@ -18,5 +18,5 @@
         $stmt->execute();
         $connect_DB->close();
     }
-header("Location: ../public/todo.php");
+header("Location: todo.php");
  ?>

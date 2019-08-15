@@ -17,7 +17,7 @@
         <link rel="shortcut icon" href="#">
 
         <!-- CSS link -->
-        <link rel="stylesheet" href="../public/styles/todo.css">
+        <link rel="stylesheet" href="styles/todo.css">
 
         <!-- jQuery link -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -42,10 +42,10 @@
 
                     <div class="db_status">
                         <?php                  
-                            require_once("db.php");
+                            require_once("../private/db.php");
                             getDB_status();
                             if (empty($_SESSION['username'])) {
-                            header("Location: ../public/index.html");
+                            header("Location: index.html");
 }
                         ?>  
                     </div>
@@ -54,14 +54,14 @@
                         <li onclick="switchTodo()"><i class="fas fa-clipboard-list"></i></li>
                         <li onclick="switchCal()"><i class="fas fa-calendar-alt"></i></li>
                         <li onclick="switchPpl()"><i class="fas fa-cloud-sun-rain"></i></li>
-                        <li><a href="logout_user.php"><i class="fas fa-sign-out-alt"></i></a></li>
+                        <li><a href="../private/logout_user.php"><i class="fas fa-sign-out-alt"></i></a></li>
                     </ul>
 
                 </nav>
 
                 <section id="todo">
 
-                    <form action="new_todo.php" method="post">
+                    <form action="../private/new_todo.php" method="post">
                         <input class="td_input" name="task_name" type="text" placeholder="add new item here" autocomplete="off" maxlength="60">
                     </form>
 
@@ -72,7 +72,7 @@
 
                     <ul id="todo_list" class="todo_list">
 <?php
-require_once("db.php");
+require_once("../private/db.php");
    getData();
 ?>
                     </ul>
@@ -107,7 +107,7 @@ require_once("db.php");
 
                     <ul class="settings_items">
                         <li class="clicked">
-                        <form action="delete_all.php" method="post">
+                        <form action="../private/delete_all.php" method="post">
                         <button type="submit">
                         <span><i class="fas fa-ban"></i></span>
                         </button>

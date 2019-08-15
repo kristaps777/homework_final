@@ -28,7 +28,7 @@ if ($result->num_rows < 1 && (!password_verify ($myPassword , $row['pwhash']))) 
 } else {
     $_SESSION['username'] = $myUserName;
     $_SESSION['pwhash'] = $row['pwhash'];
-    header("Location: todo.php");
+    header("Location: ../public/todo.php");
 }
 
 };

@@ -24,6 +24,9 @@ $mydata = $result->fetch_all(MYSQLI_ASSOC);
 // try with fetch!!!
 foreach ($mydata as $key => $row) {
 $_SESSION['userID'] = $row['id'];
+// something to think about!!!
+// unset($_SESSION['username']);
+// unset($_SESSION['pwhash']);
 }
 }
 };

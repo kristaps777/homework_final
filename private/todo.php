@@ -1,8 +1,3 @@
-<?php
-if (!isset($_SESSION['username'])) {
-    header("Location: ../public/index.html");
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,6 +44,9 @@ if (!isset($_SESSION['username'])) {
                         <?php                  
                             require_once("db.php");
                             getDB_status();
+                            if (empty($_SESSION['username'])) {
+                            header("Location: ../public/index.html");
+}
                         ?>  
                     </div>
 
@@ -64,7 +62,7 @@ if (!isset($_SESSION['username'])) {
                 <section id="todo">
 
                     <form action="new_todo.php" method="post">
-                        <input class="td_input" name="task_name" type="text" placeholder="add new item here" maxlength="60">
+                        <input class="td_input" name="task_name" type="text" placeholder="add new item here" autocomplete="off" maxlength="60">
                     </form>
 
                     <span id="settings_button" class="settings_button clicked" onclick="settingsButton()"><i
@@ -77,10 +75,6 @@ if (!isset($_SESSION['username'])) {
 require_once("db.php");
    getData();
 ?>
-
-                        <!-- <li><input class="td_entry" type="checkbox" /><label>#item1</label><span><i class="fas fa-trash-alt"></i></span></li>
-                        <li><input class="td_entry" type="checkbox" /><label>#item2</label><span><i class="fas fa-trash-alt"></i></span></li>
-                        <li><input class="td_entry" type="checkbox" /><label>#item3</label><span><i class="fas fa-trash-alt"></i></span></li> -->
                     </ul>
                     
 
@@ -94,9 +88,8 @@ require_once("db.php");
 
                     <div id="lastmod">
                     <?php
-// outputs e.g. 'Last modified: March 04 1998 20:43:59.'
-echo "Last modified: " . date ("F d Y H:i:s.", getlastmod());
-?>
+                        echo "Last modified: " . date ("F d Y H:i:s.", getlastmod());
+                    ?>
                     </div>
 
                 </section>

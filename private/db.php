@@ -5,17 +5,10 @@ function getDB_status() {
     $connect_DB = mysqli_connect(SERVER, USER, PW, DB);
 
     if (!$connect_DB) {
-    // echo "Error: Unable to connect to MySQL." . PHP_EOL;
-    // echo "Debugging error: " . mysqli_connect_errno() . PHP_EOL;
-    // echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
     echo $dbStatusNok;
-    // exit;
 } else {
     echo $dbStatusOk;
     echo "<div>Hello, " . $_SESSION['username'] . "!</div>";
-    // echo "<br>";
-    // echo $_SESSION['pwhash'];
-    // echo "<br>";
 
 // get userID by username and password
 $sql = "SELECT id FROM users WHERE username = '$_SESSION[username]' AND pwhash = '$_SESSION[pwhash]'";

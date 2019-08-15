@@ -34,7 +34,23 @@ body:before {
     z-index: -10;
     background: url("../img/background.jpg") no-repeat center center;
     background-size: cover;
-    filter: brightness(80%);
+    filter: brightness(80%) grayscale(1);
+}
+
+body:after {
+    content: "";
+    display: block;
+    position: fixed;
+    opacity: .8;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: -webkit-fill-available;
+    height: 100vh;
+    z-index: -9;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(0,0,0,0.9) 70%);
+    background-size: cover;
+    filter: brightness(80%) grayscale(1);
 }
 
 main {
@@ -52,6 +68,10 @@ main {
     display: flex;
     position: relative;
     flex-direction: column;
+    box-shadow:
+        -10px -20px 50px rgba(27, 35, 71, 0.9),
+        0 20px 50px rgba(27, 35, 71, 0.9),
+        10px 40px 50px rgba(27, 35, 71, 0.9);
 }
 
 nav {
@@ -64,13 +84,12 @@ nav {
 .db_status {
     position: absolute;
     height: fit-content;
-    top: 0;
+    top: 5%;
     left: 0;
     z-index: 10;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 10px;
     width: 100%;
 }
 
@@ -87,10 +106,10 @@ nav {
     flex-direction: row;
     height: 100%;
     width: 100%;
-    border-bottom: 1px solid white;
+    border-bottom: 2px solid rgba(102, 117, 187, 0.7);
     justify-content: center;
     font-size: 2em;
-    margin-top: 20px;
+    filter: drop-shadow(1px 0px 2px #031f53);
 }
 
 .navigation li {
@@ -100,6 +119,7 @@ nav {
     align-items: center;
     padding: 10px;
     color: white;
+    filter: contrast(90%) drop-shadow(2px 1px 2px #6897ed);
 }
 
 .navigation li:active {
@@ -150,6 +170,7 @@ input:focus, button:focus, a:focus {
 
 input::placeholder {
     font-style: italic;
+    opacity: .7;
 }
 
 #todo {
@@ -162,6 +183,7 @@ input::placeholder {
     top: 5%;
     cursor: pointer;
     font-size: 1.5em;
+    filter: contrast(90%) drop-shadow(2px 1px 2px #6897ed);
 }
 
 .save_button {
@@ -170,6 +192,7 @@ input::placeholder {
     top: 5%;
     cursor: pointer;
     font-size: 1.5em;
+    filter: contrast(90%) drop-shadow(2px 1px 2px #6897ed);
 }
 
 .clicked:active {
@@ -269,7 +292,7 @@ input::placeholder {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    background-color: rgba(102, 117, 187, 0.7);
+    background-color: rgba(102, 117, 187, 0.2);
     position: absolute;
     right: 0;
     bottom: -15%;
@@ -278,6 +301,11 @@ input::placeholder {
     transition: ease-in-out;
     transition: .5s;
     font-size: 2em;
+    filter: brightness(75%) grayscale(.3);
+     box-shadow:
+        inset -10px -20px 50px rgba(27, 35, 71, 0.4),
+        inset 0 20px 50px rgba(27, 35, 71, 0.4),
+        inset 10px 40px 50px rgba(27, 35, 71, 0.4);
 }
 
 @keyframes settings {
@@ -328,10 +356,11 @@ input::placeholder {
     text-align: center;
 }
 
-.settings_items li:active {
-    background-color: grey;
+.settings_items li:hover {
+    background-color: rgba(102, 117, 187, 0.2);
+    filter: drop-shadow(2px 1px 2px #6897ed);
     cursor: pointer;
-}
+    }
 
 .settings_items span {
     margin-bottom: 5px;
@@ -361,7 +390,7 @@ input::placeholder {
 
 #widget {
     margin: auto;
-    height: 30% !important;
+    height: 50% !important;
 }
 
  /* media queries */
@@ -381,7 +410,7 @@ input::placeholder {
     }
     .navigation {
         flex-direction: column;
-        border-right: 1px solid white;
+        border-right: 2px solid rgba(102, 117, 187, 0.7);
         border-bottom: none;
         font-size: 3em;
         margin-top: 0;
@@ -392,12 +421,12 @@ input::placeholder {
     }
     .navigation li:hover {
         background-color: white;
-        color: rgba(27, 35, 71, 0.7);
+        color: rgba(27, 35, 71, 0.5);
         cursor: pointer;
     }
     
     .navigation li:hover a {
-        color: rgba(27, 35, 71, 0.7);
+        color: rgba(27, 35, 71, 0.5);
     }
     section {
         height: 100%;
@@ -409,10 +438,6 @@ input::placeholder {
     }
     .settings i{
         font-size: 2em;
-    }
-    .settings_items li:hover {
-        background-color: grey;
-        cursor: pointer;
     }
     .td_input {
         height: 30px;

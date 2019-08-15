@@ -24,8 +24,6 @@ $connect_DB->close();
 $row = $result->fetch_assoc();
 
 if ($result->num_rows < 1 && (!password_verify ($myPassword , $row['pwhash']))) {
-    // $message = "NO SUCH USER!";
-    // echo "<script type='text/javascript'>alert('$message');</script>";
     header("Location: ../public/index.html");
 } else {
     $_SESSION['username'] = $myUserName;
@@ -33,16 +31,5 @@ if ($result->num_rows < 1 && (!password_verify ($myPassword , $row['pwhash']))) 
     header("Location: todo.php");
 }
 
-
-
-// if (!password_verify ($myPassword , $row['pwhash'])) {
-//      $message = "NO SUCH USER!";
-//      echo "<script type='text/javascript'>alert('$message');</script>";
-//      header("Location: ../public/index.html");
-// } else {
-//      $_SESSION['username'] = $myUserName;
-//      $_SESSION['pwhash'] = $row['pwhash'];
-//      header("Location: ../public/todo.php");
-// }
 };
 ?>

@@ -19,7 +19,7 @@
         if (isset($_POST['name'])) $myName = mysqli_real_escape_string($connect_DB, $_REQUEST['name']);
         if (isset($_POST['username'])) {
             $myUser = mysqli_real_escape_string($connect_DB, $_REQUEST['username']);
-            $_SESSION['username'] = $_POST['username'];
+            $_SESSION['username'] = $myUser;
         };
         
         $stmt = $connect_DB->prepare("INSERT INTO users (name, username, pwhash) VALUES (?, ?, ?)");

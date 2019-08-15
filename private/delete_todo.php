@@ -1,4 +1,5 @@
 <?php
+  session_start();
   require_once("config.php");
   if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['ident'])) {
         $connect_DB = mysqli_connect(SERVER, USER, PW, DB);
@@ -9,14 +10,15 @@
             echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
             exit;
         }
-        
-// $sql = "DELETE FROM todo_list WHERE id=$_POST[ident]";
 
-$stmt = $connect_DB->prepare("DELETE FROM todo_list WHERE id = ?");
-$stmt->bind_param("s", $_POST['ident']);
+$id = mysqli_real_escape_string($connect_DB, $_REQUEST['ident']);
+$myUserID = mysqli_real_escape_string($connect_DB, $_SESSION['userID']);
 
 
-// mysqli_query($connect_DB, $sql);
+$stmt = $connect_DB->prepare("DELETE FROM todo_list WHERE id = ? AND userID = ?");
+$stmt->bind_param("ss", $id, $myUserID);
+
+
 $stmt->execute();
 $connect_DB->close();
 header("Location: ../public/todo.php");

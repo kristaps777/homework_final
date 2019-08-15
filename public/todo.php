@@ -44,7 +44,7 @@
                         <?php                  
                             require_once("../private/db.php");
                             getDB_status();
-                        ?>
+                        ?>  
                     </div>
 
                     <ul class="navigation">
@@ -98,7 +98,7 @@ echo "Last modified: " . date ("F d Y H:i:s.", getlastmod());
 
                 <section id="people" class="inactive">
 
-                <a style="margin: auto" class="weatherwidget-io" href="https://forecast7.com/en/56d9524d11/riga/" data-label_1="RIGA" data-label_2="WEATHER" data-theme="original" >RIGA WEATHER</a>
+                <a id="widget" class="weatherwidget-io" href="https://forecast7.com/en/56d9524d11/riga/" data-label_1="RIGA" data-label_2="WEATHER" data-theme="original" >RIGA WEATHER</a>
 <script defer>
 !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
 </script>

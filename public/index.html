@@ -59,22 +59,26 @@
 
                 <div id="moveable" class="form_front">
 
-                    <div id="login_form" class="form_data">
+                    <form action="../private/login_user.php" method="post" id="login_form" class="form_data">
                         <h2>Login</h2>
                         <hr>
-                        <input id="username" type="text" placeholder="username" required>
-                        <input id="password" type="password" placeholder="password" required>
-                        <a href="todo.php">
-                            <button id="login_front" class="orange" type="button" onclick="">login</button></a>
-                    </div>
+                        <input name="username" id="username" type="text" placeholder="username" spellcheck="false"
+                            minlength="8" maxlength="30" required>
+                        <input name="password" id="password" type="password" placeholder="password" spellcheck="false"
+                            minlength="8" maxlength="30" required>
+                        <button class="orange margin_top" type="submit">login</button>
+                    </form>
 
                     <form id="register_form" class="inactive" action="../private/new_user.php" method="post">
                         <h2>Register</h2>
                         <hr>
-                        <input name="name" type="text" placeholder="name" required>
-                        <input name="username" type="text" placeholder="username" required>
-                        <input name="password" type="password" placeholder="password" required>
-                        <button id="login_front" class="orange margin_top" type="submit">register</button>
+                        <input name="name" type="text" placeholder="name" spellcheck="false" minlength="8"
+                            maxlength="30" required>
+                        <input name="username" type="text" placeholder="username" spellcheck="false" minlength="8"
+                            maxlength="30" required>
+                        <input name="password" type="password" placeholder="password" spellcheck="false" minlength="8"
+                            maxlength="30" required>
+                        <button class="orange margin_top" type="submit">register</button>
 
                     </form>
 
@@ -112,9 +116,7 @@
                                 <hr>
                                 <input type="text" placeholder="username" required>
                                 <input type="password" placeholder="password" required>
-                                <a href="todo.php">
-                                    <button id="login_front" class="button_mobile orange" type="button"
-                                        onclick="">login</button></a>
+                                <button class="button_mobile orange margin_top" type="button">login</button>
                             </div>
 
                             <form id="register_form_mobile" class="inactive" action="../private/new_user.php"
@@ -124,8 +126,7 @@
                                 <input name="name" type="text" placeholder="name" required>
                                 <input name="username" type="text" placeholder="username" required>
                                 <input name="password" type="password" placeholder="password" required>
-                                <button id="login_front" class="button_mobile orange margin_top" type="submit"
-                                    onclick="">register</button>
+                                <button class="button_mobile orange margin_top" type="submit">register</button>
 
                             </form>
 

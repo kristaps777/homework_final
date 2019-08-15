@@ -1,4 +1,5 @@
 <?php
+  session_start();
   require_once("../private/config.php");
   if($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['ident'])) {
         $connect_DB = mysqli_connect(SERVER, USER, PW, DB);
@@ -10,11 +11,14 @@
             exit;
         }
 
+// add security check with userID!!!
+
 $id = mysqli_real_escape_string($connect_DB, $_REQUEST['ident']);
 $task = mysqli_real_escape_string($connect_DB, $_REQUEST['edit']);
+$myUserID = mysqli_real_escape_string($connect_DB, $_SESSION['userID']);
 
-$stmt = $connect_DB->prepare("UPDATE todo_list SET task = ? WHERE id = ?");
-$stmt->bind_param("ss", $task, $id);
+$stmt = $connect_DB->prepare("UPDATE todo_list SET task = ? WHERE id = ? AND userID = ?");
+$stmt->bind_param("sss", $task, $id, $myUserID);
 $stmt->execute();
 
 $connect_DB->close();

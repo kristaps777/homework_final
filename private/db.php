@@ -21,6 +21,7 @@ function getDB_status() {
 $sql = "SELECT id FROM users WHERE username = '$_SESSION[username]' AND pwhash = '$_SESSION[pwhash]'";
 $result = $connect_DB->query($sql);
 $mydata = $result->fetch_all(MYSQLI_ASSOC);
+// try with fetch!!!
 foreach ($mydata as $key => $row) {
 $_SESSION['userID'] = $row['id'];
 }

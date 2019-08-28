@@ -1,52 +1,11 @@
 <?php
-function getDB_status() {
-    session_start();
-    require_once("config.php");
-    $connect_DB = mysqli_connect(SERVER, USER, PW, DB);
-
-    if (!$connect_DB) {
-    echo $dbStatusNok;
-} else {
-    echo $dbStatusOk;
-    echo "<div>Hello, " . $_SESSION['username'] . "!</div>";
-
-// get userID by username and password
-$sql = "SELECT id FROM users WHERE username = '$_SESSION[username]' AND pwhash = '$_SESSION[pwhash]'";
-$result = $connect_DB->query($sql);
-$mydata = $result->fetch_all(MYSQLI_ASSOC);
-// try with fetch!!!
-foreach ($mydata as $key => $row) {
-$_SESSION['userID'] = $row['id'];
-// something to think about!!!
-// unset($_SESSION['username']);
-// unset($_SESSION['pwhash']);
-}
-}
-};
-
-function getDB() {
-    require_once("config.php");
-    $connect_DB = mysqli_connect(SERVER, USER, PW, DB);
-
-    if (!$connect_DB) {
-    echo "Error: Unable to connect to MySQL." . PHP_EOL;
-    echo "Debugging error: " . mysqli_connect_errno() . PHP_EOL;
-    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
-    exit;
-}
-};
-
+require_once('Connect.php');
 function getData() {
 session_start();
-require_once("config.php");
-$connect_DB = mysqli_connect(SERVER, USER, PW, DB);
+$conn = new Connect();
 $sql = "SELECT * FROM todo_list WHERE userID = '$_SESSION[userID]'  ORDER BY task ASC";
-$result = $connect_DB->query($sql);
+$result = $conn->connectDB()->query($sql);
 $mydata = $result->fetch_all(MYSQLI_ASSOC);
-
-
-// echo "Success: A proper connection to MySQL was made! The my_db database is great." . PHP_EOL;
-// echo "Host information: " . mysqli_get_host_info($connect_DB) . PHP_EOL;
 
 
 foreach ($mydata as $key => $row) {
@@ -77,6 +36,6 @@ foreach ($mydata as $key => $row) {
   
 }
 
-mysqli_close($connect_DB);
+mysqli_close($conn);
 };
 ?>

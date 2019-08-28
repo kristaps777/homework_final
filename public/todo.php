@@ -42,11 +42,11 @@
 
                     <div class="db_status">
                         <?php                  
-                            require_once("../private/db.php");
-                            getDB_status();
-                            if (empty($_SESSION['username'])) {
-                            header("Location: index.html");
-}
+                            require_once('../private/Connect.php');
+                            $status = new Connect();
+                            $status->getStatus();
+                            $empty = new Connect();
+                            $empty->checkEmpty();
                         ?>  
                     </div>
 
@@ -71,10 +71,11 @@
 
 
                     <ul id="todo_list" class="todo_list">
-<?php
-require_once("../private/db.php");
-   getData();
-?>
+                    <?php
+                    require_once('../private/Connect.php');
+                    $data = new Connect();
+                    $data->getData();
+                    ?>
                     </ul>
                     
 
